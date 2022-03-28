@@ -1,0 +1,144 @@
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: #fff;
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 0.5fr 0.2fr 0.2fr 0.1fr;
+    grid-template-areas: 
+    "nav main main"
+    "content1 content1 content1"
+    "content2 content2 footer"
+    "content2 content2 sidebar"
+    "content3 content3 content3"
+    ;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav {
+    align-items: center;
+    display: grid;
+    background-color: black;
+    grid-area: nav;
+    padding: var(--my-padding);
+}
+
+.nav-container {
+    align-items: center;
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.content1 {
+    align-items: center;
+    display: grid;
+    background-color: rgb(124, 148, 228);
+    grid-area: content1;
+    padding: var(--my-padding);
+}
+
+.content2 {
+    align-items: center;
+    display: grid;
+    background-color: darkred;
+    grid-area: content2;
+    padding: var(--my-padding);
+}
+
+.content3 {
+    align-items: center;
+    display: grid;
+    background-color: orange;
+    grid-area: content3;
+    padding: var(--my-padding);
+}
+
+.sidebar {
+    align-items: center;
+    display: grid;
+    background-color: green;
+    grid-area: sidebar;
+    padding: var(--my-padding);
+}
+
+main {
+    align-items: center;
+    display: grid;
+    background-color: red;
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+.footer {
+    align-items: center;
+    display: grid;
+    background-color: rgb(194, 186, 186);
+    grid-area: footer;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px) {
+    .nav-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .container {
+        gap: 0;
+        grid-template-columns: 0.6fr 1fr 1fr;
+        grid-template-rows: 0.2fr 0.8fr 1fr 0.4fr 0.3fr;
+        grid-template-areas: 
+        "nav nav nav"
+        "content1 content1 content1"
+        "main content2 content2"
+        "main content3 content3"
+        "main sidebar footer"
+    }
+
+    .footer {
+        display: grid;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .container {
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.3fr 0.6fr 1fr 0.5fr 0.5fr 0.5fr;
+        grid-template-areas: 
+        "nav"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "sidebar"
+        "footer"
+        ;
+    }
+
+    .content3 {
+        display: grid;
+    }
+
+    .sidebar {
+        display: grid;
+        align-items: center;
+    
+    }
+}
